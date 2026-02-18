@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/sidebar.css">
+  <style>
+    body { font-family: var(--font-family-font); margin: 0; background: #f5f5f5; display: flex; min-height: 100vh; }
+    .demo-container { padding: 24px; flex: 1; }
+    label { margin-right: 8px; font-weight: 500; }
+    select { padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 16px; }
+  </style>
+</head>
+<body data-theme="horizon">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">Navigation</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-nav-item active">Dashboard</a>
+      <a href="#" class="sidebar-nav-item">Users</a>
+      <a href="#" class="sidebar-nav-item">Products</a>
+      <a href="#" class="sidebar-nav-item">Orders</a>
+      <a href="#" class="sidebar-nav-item">Settings</a>
+    </nav>
+  </aside>
+  <div class="demo-container">
+    <label>Theme:</label>
+    <select id="theme-select" onchange="document.body.dataset.theme = this.value">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+    <h1>Sidebar Component</h1>
+  </div>
+</body>
+</html>

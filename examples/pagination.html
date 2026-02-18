@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/pagination.css">
+  <style>
+    body { font-family: var(--font-family-font); padding: 24px; background: #f5f5f5; }
+    .demo-container { max-width: 800px; margin: 0 auto; background: white; padding: 24px; border-radius: 8px; }
+    label { margin-right: 8px; font-weight: 500; }
+    select { padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 16px; }
+  </style>
+</head>
+<body data-theme="horizon">
+  <div class="demo-container">
+    <label>Theme:</label>
+    <select id="theme-select" onchange="document.body.dataset.theme = this.value">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+
+    <h1>Pagination</h1>
+    
+    <nav class="pagination">
+      <a href="#" class="pagination-item disabled">Prev</a>
+      <a href="#" class="pagination-item active">1</a>
+      <a href="#" class="pagination-item">2</a>
+      <a href="#" class="pagination-item">3</a>
+      <a href="#" class="pagination-item">Next</a>
+    </nav>
+  </div>
+</body>
+</html>

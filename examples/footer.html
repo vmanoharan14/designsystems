@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/footer.css">
+  <style>
+    body { font-family: var(--font-family-font); margin: 0; background: #f5f5f5; min-height: 100vh; display: flex; flex-direction: column; }
+    .demo-container { padding: 24px; flex: 1; }
+    label { margin-right: 8px; font-weight: 500; }
+    select { padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 16px; }
+  </style>
+</head>
+<body data-theme="horizon">
+  <div class="demo-container">
+    <label>Theme:</label>
+    <select id="theme-select" onchange="document.body.dataset.theme = this.value">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+    <h1>Footer Component</h1>
+    <p>Scroll down to see the footer.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-section-title">Product</div>
+        <div class="footer-section-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="#" class="footer-link">Pricing</a>
+          <a href="#" class="footer-link">Documentation</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <div class="footer-section-title">Company</div>
+        <div class="footer-section-links">
+          <a href="#" class="footer-link">About</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <div class="footer-section-title">Legal</div>
+        <div class="footer-section-links">
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Design System</span>
+      <span>All rights reserved</span>
+    </div>
+  </footer>
+</body>
+</html>

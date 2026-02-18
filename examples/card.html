@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/card.css">
+  <style>
+    body { font-family: var(--font-family-font); padding: 24px; background: #f5f5f5; }
+    .demo-container { max-width: 800px; margin: 0 auto; }
+    .demo-row { display: flex; gap: 16px; margin: 16px 0; }
+    .card { width: 300px; }
+  </style>
+</head>
+<body data-theme="horizon">
+  <div class="demo-container">
+    <label>Theme:</label>
+    <select id="theme-select" onchange="document.body.dataset.theme = this.value">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+
+    <h1>Card</h1>
+    
+    <div class="demo-row">
+      <div class="card card-hover">
+        <div class="card-header">
+          <div class="card-title">Card Title</div>
+        </div>
+        <div class="card-body">
+          This is the card body content. It can contain any text or elements.
+        </div>
+      </div>
+
+      <div class="card card-selected">
+        <div class="card-header">
+          <div class="card-title">Selected Card</div>
+        </div>
+        <div class="card-body">
+          This card is in a selected state.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

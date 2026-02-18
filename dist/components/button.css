@@ -1,0 +1,82 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family-font);
+  font-size: var(--btn-primary-text);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--regular);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  padding: var(--btn-primary-padding-y) var(--btn-primary-padding-x);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--btn-primary-border-focus);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-main);
+  color: var(--btn-primary-text-color);
+  border-color: var(--btn-primary-main);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--btn-primary-pressed);
+  border-color: var(--btn-primary-pressed);
+}
+
+.btn-primary:focus-visible {
+  background-color: var(--btn-primary-focus);
+  border-color: var(--btn-primary-focus);
+}
+
+.btn-primary:disabled {
+  background-color: var(--btn-primary-disabled);
+  border-color: var(--btn-primary-disabled);
+  color: var(--btn-primary-text-color);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg-main);
+  color: var(--btn-secondary-text-main);
+  border-color: var(--btn-secondary-border-main);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--btn-secondary-hover);
+  color: var(--btn-secondary-hover-text);
+  border-color: var(--btn-secondary-hover-border);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: var(--btn-secondary-pressed);
+  color: var(--btn-secondary-hover-pressed-text);
+  border-color: var(--btn-secondary-border-pressed);
+}
+
+.btn-secondary:focus-visible {
+  background-color: var(--btn-secondary-bg-main);
+  border-color: var(--btn-secondary-border-main);
+}
+
+.btn-secondary:disabled {
+  background-color: var(--btn-secondary-disabled);
+  color: var(--btn-secondary-disabled-text);
+  border-color: var(--btn-secondary-border-disabled);
+}

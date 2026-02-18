@@ -1,0 +1,30 @@
+{
+  "name": "design-system-tokens",
+  "version": "1.0.0",
+  "description": "CSS design system generated from Figma tokens",
+  "scripts": {
+    "build": "node build/generate-tokens.js",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:unit:ui": "vitest --ui",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:visual": "playwright test --grep @visual"
+  },
+  "keywords": [
+    "design-system",
+    "tokens",
+    "figma",
+    "css"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@vitest/ui": "^4.0.18",
+    "playwright": "^1.58.2",
+    "serve": "^14.2.5",
+    "vitest": "^4.0.18"
+  }
+}

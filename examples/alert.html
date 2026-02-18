@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="horizon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert Component - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/alert.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font-family-font);
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+    }
+    .container { max-width: 600px; margin: 0 auto; }
+    .theme-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .theme-switcher label { font-weight: 500; margin-right: 8px; }
+    .theme-switcher select {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    h1 { color: var(--gray-90); margin-bottom: 8px; }
+    .subtitle { color: var(--gray-70); margin-bottom: 32px; }
+    .section { margin-bottom: 32px; }
+    .alert + .alert { margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="theme-switcher">
+    <label for="theme">Theme:</label>
+    <select id="theme" onchange="switchTheme(this.value)">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <h1>Alert Component</h1>
+    <p class="subtitle">Alert variants with horizon and braven theme support</p>
+
+    <div class="section">
+      <h2 style="color: var(--gray-90); font-size: 18px; margin-bottom: 16px;">Error Alert</h2>
+      <div class="alert alert-error">
+        <svg class="alert-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <div class="alert-content">
+          <p class="alert-title">Error Alert</p>
+          <p class="alert-body">Something went wrong. Please try again or contact support.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 style="color: var(--gray-90); font-size: 18px; margin-bottom: 16px;">Warning Alert</h2>
+      <div class="alert alert-warning">
+        <svg class="alert-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+        </svg>
+        <div class="alert-content">
+          <p class="alert-title">Warning Alert</p>
+          <p class="alert-body">Please review your information before proceeding.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 style="color: var(--gray-90); font-size: 18px; margin-bottom: 16px;">Success Alert</h2>
+      <div class="alert alert-success">
+        <svg class="alert-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <div class="alert-content">
+          <p class="alert-title">Success Alert</p>
+          <p class="alert-body">Your changes have been saved successfully.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 style="color: var(--gray-90); font-size: 18px; margin-bottom: 16px;">Info Alert</h2>
+      <div class="alert alert-info">
+        <svg class="alert-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+        </svg>
+        <div class="alert-content">
+          <p class="alert-title">Info Alert</p>
+          <p class="alert-body">Here's some helpful information for you.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 style="color: var(--gray-90); font-size: 18px; margin-bottom: 16px;">With Close Button</h2>
+      <div class="alert alert-info">
+        <svg class="alert-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+        </svg>
+        <div class="alert-content">
+          <p class="alert-title">Dismissible Alert</p>
+          <p class="alert-body">Click the X button to dismiss this alert.</p>
+        </div>
+        <button class="alert-close" onclick="this.parentElement.remove()">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  </script>
+</body>
+</html>

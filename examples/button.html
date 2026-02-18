@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="horizon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Component - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/button.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font-family-font);
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    .theme-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .theme-switcher label { font-weight: 500; margin-right: 8px; }
+    .theme-switcher select {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    h1 { color: var(--gray-90); margin-bottom: 8px; }
+    .subtitle { color: var(--gray-70); margin-bottom: 32px; }
+    .section { margin-bottom: 40px; }
+    .section h2 {
+      color: var(--gray-90);
+      font-size: 18px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gray-25);
+    }
+    .button-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .button-row + .button-row { margin-top: 16px; }
+    .label {
+      font-size: 12px;
+      color: var(--gray-70);
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-switcher">
+    <label for="theme">Theme:</label>
+    <select id="theme" onchange="switchTheme(this.value)">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <h1>Button Component</h1>
+    <p class="subtitle">Button variants with horizon and braven theme support (Figma tokens only)</p>
+
+    <div class="section">
+      <h2>Primary Buttons</h2>
+      <div class="button-row">
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-primary" disabled>Disabled Primary</button>
+      </div>
+      <p class="label">Hover, focus, and pressed states supported</p>
+    </div>
+
+    <div class="section">
+      <h2>Secondary Buttons</h2>
+      <div class="button-row">
+        <button class="btn btn-secondary">Secondary Button</button>
+        <button class="btn btn-secondary" disabled>Disabled Secondary</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Links as Buttons</h2>
+      <div class="button-row">
+        <a href="#" class="btn btn-primary">Link Button</a>
+        <a href="#" class="btn btn-secondary">Link Secondary</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  </script>
+</body>
+</html>

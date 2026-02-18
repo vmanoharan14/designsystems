@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badges - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/badges.css">
+  <style>
+    body { font-family: var(--font-family-font); padding: 24px; background: #f5f5f5; }
+    .demo-container { max-width: 800px; margin: 0 auto; background: white; padding: 24px; border-radius: 8px; }
+    .demo-row { display: flex; gap: 12px; align-items: center; margin: 16px 0; flex-wrap: wrap; }
+    label { margin-right: 8px; font-weight: 500; }
+    select { padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body data-theme="horizon">
+  <div class="demo-container">
+    <label>Theme:</label>
+    <select id="theme-select" onchange="document.body.dataset.theme = this.value">
+      <option value="horizon">Horizon</option>
+      <option value="braven">Braven</option>
+    </select>
+
+    <h1>Badges</h1>
+    
+    <h2>Badge Variants</h2>
+    <div class="demo-row">
+      <span class="badge badge-default">Default</span>
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-error">Error</span>
+    </div>
+
+    <h2>Badges with Icons</h2>
+    <div class="demo-row">
+      <span class="badge badge-success">
+        <svg class="badge-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Verified
+      </span>
+      <span class="badge badge-error">
+        <svg class="badge-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        Error
+      </span>
+    </div>
+  </div>
+</body>
+</html>

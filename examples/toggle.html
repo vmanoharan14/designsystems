@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="horizon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Component - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/toggle.css">
+  <style>
+    body {
+      font-family: var(--font-family-font, Roboto);
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .demo-section {
+      margin-bottom: 40px;
+    }
+    .demo-section h3 {
+      margin-bottom: 16px;
+      color: #333;
+    }
+    .demo-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .theme-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <select id="theme" class="theme-selector" onchange="document.documentElement.setAttribute('data-theme', this.value)">
+    <option value="horizon">Horizon Theme</option>
+    <option value="braven">Braven Theme</option>
+  </select>
+
+  <h1>Toggle Component</h1>
+
+  <div class="demo-container">
+  <div class="demo-section">
+    <h3>Default Toggles</h3>
+    <div class="demo-row">
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__switch"></span>
+        Off state
+      </label>
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input" checked>
+        <span class="toggle__switch"></span>
+        On state
+      </label>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Toggle States</h3>
+    <div class="demo-row">
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__switch"></span>
+        Default (off)
+      </label>
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input" checked>
+        <span class="toggle__switch"></span>
+        Default (on)
+      </label>
+      <label class="toggle toggle--disabled">
+        <input type="checkbox" class="toggle__input" disabled>
+        <span class="toggle__switch"></span>
+        Disabled (off)
+      </label>
+      <label class="toggle toggle--disabled">
+        <input type="checkbox" class="toggle__input" checked disabled>
+        <span class="toggle__switch"></span>
+        Disabled (on)
+      </label>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Toggle Use Cases</h3>
+    <div class="demo-row">
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input" checked>
+        <span class="toggle__switch"></span>
+        Enable notifications
+      </label>
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__switch"></span>
+        Dark mode
+      </label>
+      <label class="toggle">
+        <input type="checkbox" class="toggle__input" checked>
+        <span class="toggle__switch"></span>
+        Auto-save
+      </label>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

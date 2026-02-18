@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="horizon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkboxes Component - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/checkboxes.css">
+  <style>
+    body {
+      font-family: var(--font-family-font, Roboto);
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .demo-section {
+      margin-bottom: 40px;
+    }
+    .demo-section h3 {
+      margin-bottom: 16px;
+      color: #333;
+    }
+    .demo-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .theme-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <select id="theme" class="theme-selector" onchange="document.documentElement.setAttribute('data-theme', this.value)">
+    <option value="horizon">Horizon Theme</option>
+    <option value="braven">Braven Theme</option>
+  </select>
+
+  <div class="demo-container">
+    <h1>Checkboxes Component</h1>
+
+  <div class="demo-section">
+    <h3>Default Checkboxes</h3>
+    <div class="demo-row">
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input">
+        Unchecked checkbox
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input" checked>
+        Checked checkbox
+      </label>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Checkbox States</h3>
+    <div class="demo-row">
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input">
+        Default state
+      </label>
+      <label class="checkbox checkbox--error">
+        <input type="checkbox" class="checkbox__input">
+        Error state
+      </label>
+      <label class="checkbox checkbox--disabled">
+        <input type="checkbox" class="checkbox__input" disabled>
+        Disabled unchecked
+      </label>
+      <label class="checkbox checkbox--disabled">
+        <input type="checkbox" class="checkbox__input" checked disabled>
+        Disabled checked
+      </label>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Checkbox Group</h3>
+    <div class="demo-row">
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input" name="options" value="1">
+        Option 1
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input" name="options" value="2" checked>
+        Option 2
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input" name="options" value="3">
+        Option 3
+      </label>
+    </div>
+  </div>
+  </div>
+</div>
+  </body>
+</html>

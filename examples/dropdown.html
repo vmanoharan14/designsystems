@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="horizon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Component - Design System</title>
+  <link rel="stylesheet" href="../dist/tokens.css">
+  <link rel="stylesheet" href="../dist/themes.css">
+  <link rel="stylesheet" href="../dist/components/dropdown.css">
+  <style>
+    body {
+      font-family: var(--font-family-font, Roboto);
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .demo-section {
+      margin-bottom: 40px;
+    }
+    .demo-section h3 {
+      margin-bottom: 16px;
+      color: #333;
+    }
+    .demo-row {
+      margin-bottom: 16px;
+    }
+    .theme-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <select id="theme" class="theme-selector" onchange="document.documentElement.setAttribute('data-theme', this.value)">
+    <option value="horizon">Horizon Theme</option>
+    <option value="braven">Braven Theme</option>
+  </select>
+
+  <h1>Dropdown Component</h1>
+
+  <div class="demo-container">
+  <div class="demo-section">
+    <h3>Default Dropdown</h3>
+    <div class="demo-row">
+      <select class="dropdown">
+        <option value="">Select an option...</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Dropdown States</h3>
+    <div class="demo-row">
+      <select class="dropdown">
+        <option value="">Default state</option>
+        <option value="1">Option 1</option>
+      </select>
+    </div>
+    <div class="demo-row">
+      <select class="dropdown" disabled>
+        <option value="">Disabled state</option>
+        <option value="1">Option 1</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Dropdown with Pre-selected Value</h3>
+    <div class="demo-row">
+      <select class="dropdown">
+        <option value="1">Selected Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
